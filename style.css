@@ -6,13 +6,11 @@
 
 #main {
   display: block;
-
   text-align: center;
 }
 
 #color-palette {
   display: inline-block;
-  width: 50%;
 }
 
 #pixel-board {

@@ -30,7 +30,13 @@ function generatePixels() {
   }
 }
 
-function 
+function selectPixel() {
+  getPalleteDiv.addEventListener('click', (event) => {
+    const getSelecteds = document.querySelector('.selected');
+    getSelecteds.classList.remove('selected');
+    event.target.classList.add('selected');
+  });
+}
 
 window.onload = function () {
   // Gera os 4 primeiros palletes de cores, gerando as cores automaticamente de
@@ -38,4 +44,5 @@ window.onload = function () {
 
   generatePalletes();
   generatePixels();
+  selectPixel();
 };
