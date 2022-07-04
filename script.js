@@ -30,7 +30,7 @@ function generatePixels() {
   }
 }
 
-function selectPixel() {
+function palletePixel() {
   getPalleteDiv.addEventListener('click', (event) => {
     const getSelecteds = document.querySelector('.selected');
     getSelecteds.classList.remove('selected');
@@ -38,11 +38,19 @@ function selectPixel() {
   });
 }
 
+function setPixelCollor() {
+  const getPixelBoard = document.querySelector('#pixel-board');
+  getPixelBoard.addEventListener('click', (event) => {
+    const getSelected = document.querySelector('.selected');
+    event.target.style.backgroundColor = getSelected.style.backgroundColor;
+  });
+}
 window.onload = function () {
   // Gera os 4 primeiros palletes de cores, gerando as cores automaticamente de
   // e altera o primeiro elemento para preto.
 
   generatePalletes();
   generatePixels();
-  selectPixel();
+  palletePixel();
+  setPixelCollor();
 };
