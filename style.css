@@ -9,10 +9,12 @@
 
   text-align: center;
 }
+
 #color-palette {
   display: inline-block;
   width: 50%;
 }
+
 #pixel-board {
   margin-top: 50px;
   display: flex;
@@ -21,11 +23,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
 }
+
 .color {
   display: inline-block;
   border: 1px solid black;
