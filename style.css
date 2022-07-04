@@ -22,6 +22,14 @@
   margin-right: auto;
 }
 
+#clear-board {
+  background-color: green;
+  color: white;
+  margin-top: 20px;
+  width: 100px;
+  height: 30px;
+}
+
 .pixel {
   border: 1px solid black;
   width: 40px;

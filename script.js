@@ -40,11 +40,23 @@ function palletePixel() {
 
 function setPixelCollor() {
   const getPixelBoard = document.querySelector('#pixel-board');
-  getPixelBoard.addEventListener('click', (event) => {
+  getPixelBoard.addEventListener('click', (e) => {
     const getSelected = document.querySelector('.selected');
-    event.target.style.backgroundColor = getSelected.style.backgroundColor;
+    e.target.style.backgroundColor = getSelected.style.backgroundColor;
   });
 }
+
+function resetColors() {
+  const getBtnClear = document.getElementById('clear-board');
+  getBtnClear.addEventListener('click', () => {
+    const getAllPixels = document.querySelectorAll('.pixel');
+    for (let index = 0; index < getAllPixels.length; index += 1) {
+      console.log('oi');
+      getAllPixels[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
 window.onload = function () {
   // Gera os 4 primeiros palletes de cores, gerando as cores automaticamente de
   // e altera o primeiro elemento para preto.
@@ -53,4 +65,5 @@ window.onload = function () {
   generatePixels();
   palletePixel();
   setPixelCollor();
+  resetColors();
 };
