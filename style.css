@@ -14,10 +14,10 @@
 }
 
 #pixel-board {
-  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  width: 250px;
+  width: 210px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -28,6 +28,33 @@
   margin-top: 20px;
   width: 100px;
   height: 30px;
+}
+
+#board-size {
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#generate-board {
+  width: 80px;
+  height: 30px;
+  background-color: lightblue;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.container {
+  width: 100%;
+  display: block;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.container h2 {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .pixel {

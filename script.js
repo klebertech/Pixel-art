@@ -18,18 +18,24 @@ function generatePalletes() {
   getPalleteDiv.firstChild.classList.add('selected');
 }
 
-function generatePixels() {
-  for (let index = 0; index < 25; index += 1) {
-    const getPixelBoard = document.querySelector('#pixel-board');
+function generatePixels(lenghtPixel) {
+  let lenghtPixelCalc = lenghtPixel * lenghtPixel;
+  const getPixelBoard = document.getElementById('pixel-board');
+  while (getPixelBoard.firstChild) {
+    getPixelBoard.firstChild.remove();
+  }
+  for (let index = 0; index < lenghtPixelCalc; index += 1) {
     const pixel = document.createElement('div');
-    // Add a classe pixel aos pixels gerados
     pixel.className = 'pixel';
-    // Add o BG branco aos pixel
     pixel.style.backgroundColor = 'white';
     getPixelBoard.appendChild(pixel);
+    let setWidthBoard = getPixelBoard.style.width;
+    setWidthBoard = `${(lenghtPixelCalc / lenghtPixel) * 42}px`;
+    getPixelBoard.style.width = setWidthBoard;
   }
 }
 
+// Função que remove a class selected e adiciona ao pallete clickada
 function palletePixel() {
   getPalleteDiv.addEventListener('click', (event) => {
     const getSelecteds = document.querySelector('.selected');
@@ -38,6 +44,7 @@ function palletePixel() {
   });
 }
 
+// Função que adiciona o BG no Pixel, pegando o BG do pallete com class selected
 function setPixelCollor() {
   const getPixelBoard = document.querySelector('#pixel-board');
   getPixelBoard.addEventListener('click', (e) => {
@@ -46,24 +53,40 @@ function setPixelCollor() {
   });
 }
 
+// Função que reseta as BG dos pixels, adiciona o BG white a todos com classe .pixel
 function resetColors() {
   const getBtnClear = document.getElementById('clear-board');
   getBtnClear.addEventListener('click', () => {
     const getAllPixels = document.querySelectorAll('.pixel');
     for (let index = 0; index < getAllPixels.length; index += 1) {
-      console.log('oi');
       getAllPixels[index].style.backgroundColor = 'white';
     }
   });
 }
 
-window.onload = function () {
-  // Gera os 4 primeiros palletes de cores, gerando as cores automaticamente de
-  // e altera o primeiro elemento para preto.
+function inputLengthBoard() {
+  const getInputPixels = document.getElementById('board-size');
+  const getBtnPixels = document.getElementById('generate-board');
+  getBtnPixels.addEventListener('click', () => {
+    const getLengthPixels = getInputPixels.value;
 
+    if (getLengthPixels === '') {
+      alert('Board inválido!');
+    } else if (getLengthPixels < 5) {
+      generatePixels(5);
+    } else if (getLengthPixels > 50) {
+      generatePixels(50);
+    } else {
+      generatePixels(getLengthPixels);
+    }
+  });
+}
+
+window.onload = () => {
   generatePalletes();
-  generatePixels();
+  generatePixels(5);
   palletePixel();
   setPixelCollor();
   resetColors();
+  inputLengthBoard();
 };

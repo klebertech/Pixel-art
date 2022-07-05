@@ -11,8 +11,22 @@
     <main id="main">
       <h1 id="title">Paleta de Cores</h1>
       <div id="color-palette"></div>
-      <div><button id="clear-board" type="button">Limpar</button></div>
-      <div id="pixel-board"></div>
+      <div class="container">
+        <h2>Escolha o tamanho do Pixel-Board</h2>
+        <input
+          id="board-size"
+          type="number"
+          placeholder="Valor de Pixels"
+          min="1"
+        />
+        <button id="generate-board" type="button">VQV</button>
+      </div>
+      <div class="container">
+        <button id="clear-board" type="button">Limpar</button>
+      </div>
+      <div class="container">
+        <div id="pixel-board"></div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>
