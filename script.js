@@ -19,7 +19,7 @@ function generatePalletes() {
 }
 
 function generatePixels(lenghtPixel) {
-  let lenghtPixelCalc = lenghtPixel * lenghtPixel;
+  const lenghtPixelCalc = lenghtPixel * lenghtPixel;
   const getPixelBoard = document.getElementById('pixel-board');
   while (getPixelBoard.firstChild) {
     getPixelBoard.firstChild.remove();

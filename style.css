@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+body {
+  background-color: #036b52;
+}
+
 #main {
   display: block;
   text-align: center;
@@ -35,6 +39,7 @@
   border-radius: 5px;
   text-align: center;
   margin-top: 20px;
+  height: 30px;
 }
 
 #generate-board {
